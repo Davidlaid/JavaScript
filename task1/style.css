@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+}
+.box-circle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid rgb(153, 153, 153);
+    background-color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.circle.active {
+    border-color: rgb(20, 192, 23);
+    transition: 0.3s;
+}
+.line {
+    position: absolute;
+    z-index: -1;
+    width: 0%;
+    height: 4px;
+    background-color: rgb(20, 192, 23);
+    top: 50%;
+    transform: translate(0,-50%);
+    transition: 0.3s;
+}
+.box-circle::after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 4px;
+    background-color: rgb(153, 153, 153);
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.button {
+    position: absolute;
+}
